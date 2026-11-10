@@ -9,16 +9,21 @@
 ├── train_abcd.py        四组实验训练代码
 ├── cbam_model.py        CBAM 相关代码
 ├── baseline.py          基线训练代码
-├── experiment_C.py      数据增强参数实验代码
+├── experiment_C.py      数据增强参数测试实验代码
 ├── test.py              检测代码
-├── yolov8s.pt           YOLOv8s 预训练权重
-└── datasets             数据集
+├── yolov8s.pt           YOLOv8s 官方预训练权重
+├── datasets             数据集
     ├── images
     │   ├── train
     │   └── val
     └── labels
         ├── train
         └── val
+└── detect
+    ├── A_baseline
+    ├── B_CBAM
+    ├── C_P2
+    └── D_SGD
 ```
 
 ## 实验环境
@@ -72,7 +77,7 @@ D 组的 mAP50–95 最高，较 A 组提高 0.03679。B 组和 C 组的 mAP50�
 
 ## 模型权重
 
-各组训练得到的模型权重已发布，可在
+各组训练得到的各项数据、权重文件（best.pt、last.pt）、模型训练过程可视化图像、
 [Release 页面](https://github.com/doubleup77777/YOLOv8s_hotspot_detection/releases)
 下载。
 
