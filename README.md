@@ -56,7 +56,6 @@ python train_abcd.py
 
 将 `GROUP` 分别改为 `B`、`C`、`D`，可运行其他组的训练。训练结果保存在代码中设置的 `runs/detect` 目录下。
 
-注意：当前脚本设置 `patience=0`，即关闭早停；下表 A 组原始训练使用 `patience=50`，并在第 94 轮结束。复现实验时应记录并核对参数差异。B 组权重的加载需要保留 `cbam_model.py`。
 
 ## 实验结果
 
