@@ -73,7 +73,11 @@ D 组的 mAP50–95 最高，较 A 组提高 0.03679。B 组和 C 组的 mAP50�
 
 ## 模型权重
 
-各组权重请在 [Release 页面](https://github.com/doubleup77777/YOLOv8s_hotspot_detection/releases) 查看；权重需在 Release 发布后才能下载。
+各组训练得到的模型权重已发布，可在
+[Release 页面](https://github.com/doubleup77777/YOLOv8s_hotspot_detection/releases)
+下载。
+
+B 组权重加载时需要使用仓库中的 `cbam_model.py`。
 
 注意：表中 B 组数据取自验证集 mAP50–95 最高轮次，可能与程序按综合指标自动保存的 `best.pt` 不属于同一轮。
 
