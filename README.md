@@ -19,7 +19,7 @@
     └── labels
         ├── train
         └── val
-└── detect
+└── detect               训练结果
     ├── A_baseline
     ├── B_CBAM
     ├── C_P2
