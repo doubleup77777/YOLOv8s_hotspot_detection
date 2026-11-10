@@ -9,16 +9,21 @@
 ├── train_abcd.py        四组实验训练代码
 ├── cbam_model.py        CBAM 相关代码
 ├── baseline.py          基线训练代码
-├── experiment_C.py      数据增强参数实验代码
+├── experiment_C.py      数据增强参数测试实验代码
 ├── test.py              检测代码
-├── yolov8s.pt           YOLOv8s 预训练权重
-└── datasets             数据集
+├── yolov8s.pt           YOLOv8s 官方预训练权重
+├── datasets             数据集
     ├── images
     │   ├── train
     │   └── val
     └── labels
         ├── train
         └── val
+└── detect               训练结果
+    ├── A_baseline
+    ├── B_CBAM
+    ├── C_P2
+    └── D_SGD
 ```
 
 ## 实验环境
@@ -33,7 +38,7 @@
 
 | 组别 | 实验方案 |
 |---|---|
-| A | YOLOv8s 基线，自动优化器设置 |
+| A | YOLOv8s baseline，自动优化器设置 |
 | B | YOLOv8s + CBAM 注意力模块 |
 | C | YOLOv8s-P2 |
 | D | YOLOv8s，使用 SGD 优化器 |
@@ -56,7 +61,6 @@ python train_abcd.py
 
 将 `GROUP` 分别改为 `B`、`C`、`D`，可运行其他组的训练。训练结果保存在代码中设置的 `runs/detect` 目录下。
 
-注意：当前脚本设置 `patience=0`，即关闭早停；下表 A 组原始训练使用 `patience=50`，并在第 94 轮结束。复现实验时应记录并核对参数差异。B 组权重的加载需要保留 `cbam_model.py`。
 
 ## 实验结果
 
@@ -73,13 +77,12 @@ D 组的 mAP50–95 最高，较 A 组提高 0.03679。B 组和 C 组的 mAP50�
 
 ## 模型权重
 
-各组训练得到的模型权重已发布，可在
+各组训练得到的各项数据、权重文件（best.pt、last.pt）、模型训练过程可视化图像、
 [Release 页面](https://github.com/doubleup77777/YOLOv8s_hotspot_detection/releases)
 下载。
 
 B 组权重加载时需要使用仓库中的 `cbam_model.py`。
 
-注意：表中 B 组数据取自验证集 mAP50–95 最高轮次，可能与程序按综合指标自动保存的 `best.pt` 不属于同一轮。
 
 ## 论文
 
